@@ -132,7 +132,7 @@ const RegistrationForm = () => {
         <button
           disabled={!isValid || isSubmitting}
           type="submit"
-          className={`w-full p-2 my-2 rounded bg-purple-400 text-white ${
+          className={`w-full p-2 my-2 rounded bg-green-400 text-white ${
             isValid ? "cursor-pointer" : "cursor-not-allowed"
           }`}
         >
