@@ -1,4 +1,9 @@
-import { useFieldArray, useForm, useFormState } from "react-hook-form";
+import {
+  useFieldArray,
+  useForm,
+  useFormState,
+  useWatch,
+} from "react-hook-form";
 import Field from "./Field";
 
 const RegistrationForm = () => {
@@ -8,7 +13,11 @@ const RegistrationForm = () => {
     name: "social",
     control,
   });
-
+  const [name, email, password,social,age] = useWatch({
+    control,
+    name: ["name", "email", "password", "social","age"],
+  });
+  console.log({ name, email, password,social,age });
   const onSubmit = (data) => {
     console.log(data);
   };
