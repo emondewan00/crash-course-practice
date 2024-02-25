@@ -1,13 +1,9 @@
-import { useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm, useFormState } from "react-hook-form";
 import Field from "./Field";
 
 const RegistrationForm = () => {
-  const {
-    control,
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting, isValid },
-  } = useForm();
+  const { control, handleSubmit, register } = useForm();
+  const { errors, isSubmitting, isValid } = useFormState({ control });
   const { fields, append, remove } = useFieldArray({
     name: "social",
     control,
